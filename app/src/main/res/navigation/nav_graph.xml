@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/createNotesFragment"
+        android:name="com.biz.notesapp.ui.Fragment.CreateNotesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_create_notes" >
+        <action
+            android:id="@+id/action_createNotesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.biz.notesapp.ui.Fragment.HomeFragment"
+        android:label="Notes App"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_editNotesFragment"
+            app:destination="@id/editNotesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createNotesFragment"
+            app:destination="@id/createNotesFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewNotesFragment"
+            app:destination="@id/viewNotesFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editNotesFragment"
+        android:name="com.biz.notesapp.ui.Fragment.EditNotesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_edit_notes" >
+        <action
+            android:id="@+id/action_editNotesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="subtitle"
+            app:argType="string" />
+        <argument
+            android:name="priority"
+            app:argType="string" />
+        <argument
+            android:name="notes"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/viewNotesFragment"
+        android:name="com.biz.notesapp.ui.Fragment.ViewNotesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_view_notes" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="subtitle"
+            app:argType="string" />
+        <argument
+            android:name="priority"
+            app:argType="string" />
+        <argument
+            android:name="notes"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+    </fragment>
+</navigation>

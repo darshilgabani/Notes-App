@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/themeColor"
+    tools:context=".ui.Fragment.HomeFragment">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/addNoteButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="20dp"
+          android:clickable="true"
+          android:src="@drawable/ic_baseline_add_24"
+          app:backgroundTint="#FFFFFF"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" />
+
+      <LinearLayout
+          android:id="@+id/linearLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_margin="10dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <ImageView
+              android:id="@+id/filterButton"
+              android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:src="@drawable/filter_on"
+              android:background="@drawable/filter_dot" />
+
+          <ImageView
+              android:id="@+id/tagRed"
+              android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:layout_marginStart="20dp"
+              android:background="@drawable/dot_red" />
+
+
+          <ImageView
+              android:id="@+id/tagYellow"
+              android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:layout_marginStart="20dp"
+              android:background="@drawable/dot_yellow" />
+
+          <ImageView
+              android:id="@+id/tagGreen"
+              android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:layout_marginStart="20dp"
+              android:background="@drawable/dot_green" />
+
+      </LinearLayout>
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
